@@ -1332,7 +1332,7 @@ function ImageInput() {
       <Label htmlFor={name} className='capitalize'>
         Image
       </Label>
-      <Input
+      <SubmitButton
         id={name}
         name={name}
         type='file'
@@ -5515,6 +5515,7 @@ export const updatePropertyImageAction = async (
         image: fullPath,
       },
     });
+    
     revalidatePath(`/rentals/${propertyId}/edit`);
     return { message: 'Property Image Updated Successful' };
   } catch (error) {

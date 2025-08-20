@@ -6,8 +6,16 @@ import { Checkbox } from '@/components/ui/checkbox';
 import React from 'react';
 
 function AmenitiesInput({ defaultValue }: { defaultValue?: Amenity[] }) {
+  const amenitiesWithIcons = defaultValue?.map(({ name, selected }) => {
+    return {
+      name,
+      selected,
+      icon: amenities.find((amenity) => amenity.name === name)!.icon,
+    };
+  });
+
   const [selectedAmenities, setSelectedAmenities] = useState<Amenity[]>(
-    defaultValue || amenities
+    amenitiesWithIcons || amenities
   );
 
   const handleChange = (amenity: Amenity) => {

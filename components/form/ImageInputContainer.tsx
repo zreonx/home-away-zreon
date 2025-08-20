@@ -48,6 +48,7 @@ export default function ImageInputContainer(props: ImageInputContainerProps) {
         <div className="max-w-lg mt-4 ">
           <FormContainer action={action}>
             <ImageInput />
+            {props.children}
             <SubmitButton size="sm" />
           </FormContainer>
         </div>
